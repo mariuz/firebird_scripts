@@ -2,6 +2,8 @@ Readme modified
 
 You might need git for this script and php 
 
-$ sudo apt-get install git-core
+$ sudo apt-get install git-core php
+
+$ git clone  git://github.com/mariuz/firebird_scripts.git
 
 
