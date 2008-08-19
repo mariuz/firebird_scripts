@@ -1,1 +1,7 @@
 Readme modified
+
+You might need git for this script and php 
+
+$ sudo apt-get install git-core
+
+
