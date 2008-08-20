@@ -29,7 +29,7 @@ chdir("/opt/build/");
 passthru("wget --continue  wget http://www.lighttpd.net/download/lighttpd-1.4.19.tar.gz");
 passthru("tar -zxvf lighttpd-1.4.19.tar.gz");
 chdir("lighttpd-1.4.19");
-passthru("./configure");
+passthru("./configure --without-bzip2");
 passthru("make");
 passthru("sudo cp src/spawn-fcgi /usr/bin/spawn-fcgi");
 passthru("/etc/init.d/init-fastcgi start");
