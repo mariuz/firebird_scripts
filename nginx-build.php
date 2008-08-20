@@ -7,8 +7,10 @@ fwrite($fp,"/usr/bin/spawn-fcgi -a 127.0.0.1 -p 9000 -u www-data -f /usr/bin/php
 fclose($fp);
 
 passthru("sudo chmod +x /usr/bin/php-fastcgi");
+passthru("mkdir -p /opt/nginx/conf");
 passthru("sudo cp nginx/init-fastcgi /etc/init.d");
 passthru("sudo cp nginx/nginx /etc/init.d");
+passthru("sudo cp nginx/nginx.conf /opt/nginx/conf");
 passthru("sudo chmod 755 /etc/init.d/init-fastcgi");
 passthru("sudo chmod 755 /etc/init.d/nginx");
 passthru("sudo update-rc.d init-fastcgi defaults");
@@ -37,6 +39,8 @@ passthru("./configure --without-bzip2");
 passthru("make");
 passthru("sudo cp src/spawn-fcgi /usr/bin/spawn-fcgi");
 passthru("/etc/init.d/init-fastcgi start");
-
+chdir("/opt/nginx/html");
+passthru("git clone git://github.com/mariuz/firetube.git");
+passthru("chown www-data.www-data /opt/nginx");
 
 ?>
