@@ -41,6 +41,6 @@ passthru("sudo cp src/spawn-fcgi /usr/bin/spawn-fcgi");
 passthru("/etc/init.d/init-fastcgi start");
 chdir("/opt/nginx/html");
 passthru("git clone git://github.com/mariuz/firetube.git");
-passthru("chown www-data.www-data /opt/nginx");
+passthru("chown -R www-data.www-data /opt/nginx");
 
 ?>
