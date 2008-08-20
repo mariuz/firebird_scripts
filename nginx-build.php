@@ -5,7 +5,7 @@ passthru("mkdir -p /opt/build/nginx");
 chdir("/opt/build/nginx");
 passthru("wget --continue  http://sysoev.ru/nginx/nginx-0.6.32.tar.gz");
 passthru("tar -zxvf nginx-0.6.32.tar.gz");
-chdir("nginx-0.7.11");
+chdir("nginx-0.6.32");
 passthru("./configure --prefix=/opt/nginx --with-http_flv_module");
 passthru("make");
 passthru("sudo make install");
