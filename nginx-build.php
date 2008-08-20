@@ -25,10 +25,10 @@ passthru("./configure --prefix=/opt/nginx --with-http_flv_module");
 passthru("make");
 passthru("sudo make install");
 
-
+chdir("/opt/build/");
 passthru("wget --continue  wget http://www.lighttpd.net/download/lighttpd-1.4.19.tar.gz");
 passthru("tar -zxvf lighttpd-1.4.19.tar.gz");
-chdir("lighttpd-1.4.19.tar.gz");
+chdir("lighttpd-1.4.19");
 passthru("./configure");
 passthru("make");
 passthru("sudo cp src/spawn-fcgi /usr/bin/spawn-fcgi");
