@@ -19,7 +19,7 @@ passthru("make");
 passthru("sudo cp src/spawn-fcgi /usr/bin/spawn-fcgi");
 $fp = fopen('/usr/bin/php-fastcgi','w');
 fwrite($fp,"#!/bin/sh\n");
-fwrite($fp,"/usr/bin/spawn-fcgi -a 127.0.0.1 -p 9000 -u www-data -f /usr/bin/php5-cgi\n"
+fwrite($fp,"/usr/bin/spawn-fcgi -a 127.0.0.1 -p 9000 -u www-data -f /usr/bin/php5-cgi\n");
 fclose($fp);
 
 passthru("sudo chmod +x /usr/bin/php-fastcgi");
