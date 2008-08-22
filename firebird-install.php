@@ -12,4 +12,7 @@ fclose($fp);
 passthru("sudo apt-get update"); 
 passthru("sudo apt-get -y --force-yes install firebird2.1-super php5-interbase");
 passthru("sudo sudo dpkg-reconfigure firebird2.1-super");
+
+#restart fast-cgi to pick interbase extension
+passthru("sudo /etc/init.d/init-fastcgi restart");
 ?>
