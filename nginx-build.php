@@ -39,8 +39,12 @@ passthru("./configure --without-bzip2");
 passthru("make");
 passthru("sudo cp src/spawn-fcgi /usr/bin/spawn-fcgi");
 passthru("/etc/init.d/init-fastcgi start");
-chdir("/opt/nginx/html");
-passthru("git clone git://github.com/mariuz/firetube.git");
 passthru("chown -R www-data.www-data /opt/nginx");
+passthru("/etc/init.d/nginx start");
+
+
+#passthru("git clone git://github.com/mariuz/firetube.git");
+#chdir("/opt/nginx/html");
+
 
 ?>
