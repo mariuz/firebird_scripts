@@ -1,14 +1,13 @@
 You might need git for this script and php 
 
 $ sudo apt-get install git-core php5-cli
-
+$ git clone  git://github.com/mariuz/firebird_scripts.git
+$ cd firebird_scripts 
 
 This script builds firebird 2.5 from source 
 
-$ git clone  git://github.com/mariuz/firebird_scripts.git
-$ cd firebird_scripts 
-$ php firebird-build.php
+$ sudo  php firebird-build.php
 
 This script builds nginx and fastcgi support for it 
 
-$ php nginx-build.php
+$ sudo php nginx-build.php
