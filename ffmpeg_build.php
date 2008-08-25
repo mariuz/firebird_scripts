@@ -3,7 +3,7 @@
 
 $OperatingSystem="Ubuntu";
 $Version="8.04";
-$BuildDir='/opt/build';
+define("BUILDDIR","/opt/build/");
 
 function Configure()
 {
@@ -19,7 +19,9 @@ function ConfigureMakeInstall()
 {
 Configure();
 Make('install');
-chdir ($BuildDir);
+
+echo getcwd() . "\n";
+chdir (BUILDDIR);
 } 
 
 
@@ -41,16 +43,17 @@ passthru ('sudo apt-get -y install liblame-dev libfaad-dev libfaac-dev libxvidco
 passthru ('sudo wget --continue http://ftp.penguin.cz/pub/users/utx/amr/amrnb-7.0.0.2.tar.bz2');
 passthru ('tar -jxvf amrnb-7.0.0.2.tar.bz2');
 chdir ('amrnb-7.0.0.2');
-
 ConfigureMakeInstall();
 
 passthru ('sudo wget --continue http://ftp.penguin.cz/pub/users/utx/amr/amrwb-7.0.0.3.tar.bz2');
 passthru ('sudo tar -jxvf amrwb-7.0.0.3.tar.bz2');
 chdir ('amrwb-7.0.0.3');
-
 ConfigureMakeInstall();
-passthru ('pwd');
 
+#Finally ffmpeg from svn trunk 
+
+passtru ('svn checkout svn://svn.mplayerhq.hu/ffmpeg/trunk ffmpeg;cd ffmpeg;./configure --prefix=/usr --enable-libamr-nb --enable-libamr-wb --enable-libvorbis --enable-libxvid --enable-liba52 --enable-libmp3lame --enable-libx264 --enable-libtheora --enable-libfaad --enable-gpl --enable-shared --enable-pthreads --enable-libfaac --enable-nonfree --enable-postproc;make ; make install") 
+dir (BUILDDIR);
 }
 
 
