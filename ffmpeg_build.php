@@ -41,6 +41,7 @@ passthru ('sudo apt-get -y remove libx264-dev libx264');
 
 #From http://www.penguin.cz/~utx/amr download amrnb-7.0.0.2.tar.bz2 and amrwb-7.0.0.3.tar.bz2       
 
+chdir (BUILDIR);
 passthru ('sudo wget --continue http://ftp.penguin.cz/pub/users/utx/amr/amrnb-7.0.0.2.tar.bz2');
 passthru ('tar -jxvf amrnb-7.0.0.2.tar.bz2');
 chdir ('amrnb-7.0.0.2');
@@ -55,9 +56,9 @@ ConfigureMakeInstall();
 #10.GEt x264 from here  http://www.videolan.org/developers/x264.html
 
 
-passthru ('wget ftp://ftp.videolan.org/pub/videolan/x264/snapshots/x264-snapshot-20080625-2245.tar.bz2');
+passthru ('wget --continue ftp://ftp.videolan.org/pub/videolan/x264/snapshots/x264-snapshot-20080625-2245.tar.bz2');
 passthru ('tar -jxvf x264-snapshot-20080625-2245.tar.bz2');
-passthru ('cd x264-snapshot-20080625-2245');
+chdir ('x264-snapshot-20080625-2245');
 passthru ('./configure --prefix=/usr --disable-asm --enable-pic ;make ;make install');
 chdir (BUILDDIR);
 
