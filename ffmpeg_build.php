@@ -56,9 +56,8 @@ ConfigureMakeInstall();
 #10.GEt x264 from here  http://www.videolan.org/developers/x264.html
 
 
-passthru ('wget --continue ftp://ftp.videolan.org/pub/videolan/x264/snapshots/x264-snapshot-20080625-2245.tar.bz2');
-passthru ('tar -jxvf x264-snapshot-20080625-2245.tar.bz2');
-chdir ('x264-snapshot-20080625-2245');
+passthru ('git clone git://git.videolan.org/x264.git');
+chdir ('x264');
 passthru ('./configure --prefix=/usr --disable-asm --enable-pic ;make ;make install');
 chdir (BUILDDIR);
 
