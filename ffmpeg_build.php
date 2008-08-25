@@ -38,13 +38,13 @@ passthru ('sudo apt-get -y install liblame-dev libfaad-dev libfaac-dev libxvidco
 
 #From http://www.penguin.cz/~utx/amr download amrnb-7.0.0.2.tar.bz2 and amrwb-7.0.0.3.tar.bz2       
 
-passthru ('sudo wget http://ftp.penguin.cz/pub/users/utx/amr/amrnb-7.0.0.2.tar.bz2');
+passthru ('sudo wget --continue http://ftp.penguin.cz/pub/users/utx/amr/amrnb-7.0.0.2.tar.bz2');
 passthru ('tar -jxvf amrnb-7.0.0.2.tar.bz2');
 chdir ('amrnb-7.0.0.2');
 
 ConfigureMakeInstall();
 
-passthru ('sudo wget http://ftp.penguin.cz/pub/users/utx/amr/amrwb-7.0.0.3.tar.bz2');
+passthru ('sudo wget --continue http://ftp.penguin.cz/pub/users/utx/amr/amrwb-7.0.0.3.tar.bz2');
 passthru ('sudo tar -jxvf amrwb-7.0.0.3.tar.bz2');
 chdir ('amrwb-7.0.0.3');
 
