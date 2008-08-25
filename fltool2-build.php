@@ -35,20 +35,22 @@ if (($OperatingSystem == "Ubuntu") && ($Version =="8.04"))
 {
 
 
-#Install mplayer from source - we need mencoder for our class       
+#Get flvtool2
+       
 
 chdir (BUILDDIR);
-passthru ('sudo wget --continue http://www2.mplayerhq.hu/MPlayer/releases/MPlayer-1.0rc2.tar.bz2');
-passthru ('sudo wget --continue http://www2.mplayerhq.hu/MPlayer/releases/codecs/essential-20061022.tar.bz2');
+passthru ('sudo wget --continue http://rubyforge.org/frs/download.php/17497/flvtool2-1.0.6.tgz');
 
-passthru ('tar -jxf essential-20061022.tar.bz2');
-passthru ('tar -jxf MPlayer-1.0rc2.tar.bz2');
+passthru ('tar -zxf flvtool2-1.0.6.tgz');
 
-passthru ('essential-20061022 codecs');
-passthru ('mv codecs /usr/lib/');
+chdir ('flvtool2-1.0.6');
 
-chdir ('MPlayer-1.0rc2/');
-ConfigureMakeInstall();
+passthru ('ruby setup.rb config');
+passthru ('ruby setup.rb setup');
+passthru ('ruby setup.rb install');
+
+chdir (BUILDDIR);
+
 }
 
 
