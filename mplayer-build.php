@@ -47,7 +47,7 @@ passthru ('tar -jxf MPlayer-1.0rc2.tar.bz2');
 passthru ('essential-20061022 codecs');
 passthru ('mv codecs /usr/lib/');
 
-chdir ('cd MPlayer-1.0rc2/');
+chdir ('MPlayer-1.0rc2/');
 ConfigureMakeInstall();
 }
 
