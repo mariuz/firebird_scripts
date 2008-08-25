@@ -53,6 +53,10 @@ $fp = fopen('/etc/php5/conf.d/ffmpeg.ini','w');
 fwrite($fp,"extension=ffmpeg.so\n");
 fclose($fp);
 
+passthru ('php -r \'phpinfo();\' | grep ffmpeg'); 
+
+#retart fast-cgi to pick ffmpeg extension
+passthru("sudo /etc/init.d/init-fastcgi restart");
 
 
 
