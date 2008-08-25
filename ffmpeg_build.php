@@ -41,7 +41,7 @@ passthru ('sudo apt-get -y remove libx264-dev libx264');
 
 #From http://www.penguin.cz/~utx/amr download amrnb-7.0.0.2.tar.bz2 and amrwb-7.0.0.3.tar.bz2       
 
-chdir (BUILDIR);
+chdir (BUILDDIR);
 passthru ('sudo wget --continue http://ftp.penguin.cz/pub/users/utx/amr/amrnb-7.0.0.2.tar.bz2');
 passthru ('tar -jxvf amrnb-7.0.0.2.tar.bz2');
 chdir ('amrnb-7.0.0.2');
