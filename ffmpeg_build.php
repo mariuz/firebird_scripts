@@ -52,8 +52,9 @@ ConfigureMakeInstall();
 
 #Finally ffmpeg from svn trunk 
 
-passtru ('svn checkout svn://svn.mplayerhq.hu/ffmpeg/trunk ffmpeg;cd ffmpeg;./configure --prefix=/usr --enable-libamr-nb --enable-libamr-wb --enable-libvorbis --enable-libxvid --enable-liba52 --enable-libmp3lame --enable-libx264 --enable-libtheora --enable-libfaad --enable-gpl --enable-shared --enable-pthreads --enable-libfaac --enable-nonfree --enable-postproc;make ; make install") 
-dir (BUILDDIR);
+passthru ('svn checkout svn://svn.mplayerhq.hu/ffmpeg/trunk ffmpeg');
+passthru ('cd ffmpeg;./configure --prefix=/usr --enable-libamr-nb --enable-libamr-wb --enable-libvorbis --enable-libxvid --enable-liba52 --enable-libmp3lame --enable-libx264 --enable-libtheora --enable-libfaad --enable-gpl --enable-shared --enable-pthreads --enable-libfaac --enable-nonfree --enable-postproc;make ; make install'); 
+chdir (BUILDDIR);
 }
 
 
