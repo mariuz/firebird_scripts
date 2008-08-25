@@ -33,7 +33,7 @@ chdir (BUILDDIR);
 if (($OperatingSystem == "Ubuntu") && ($Version =="8.04"))
 
 {
-passthru ('sudo apt-get -y install ruby subversion gcc git-core automake unzip libogg-dev libvorbis-dev wget ');
+passthru ('sudo apt-get -y install ruby subversion gcc git-core automake unzip libogg-dev libvorbis-dev wget php5-dev ');
 passthru ('sudo apt-get -y build-dep ffmpeg');
 passthru ('sudo apt-get -y install liblame-dev libfaad-dev libfaac-dev libxvidcore4-dev liba52-0.7.4 liba52-0.7.4-dev libdts-dev checkinstall liba52-dev libdts-dev libgsm1-dev libvorbis-dev libdc1394-dev libfaad-dev libtheora-dev libsdl1.2-dev ');
 passthru ('sudo apt-get -y remove libx264-dev libx264');
@@ -55,10 +55,10 @@ ConfigureMakeInstall();
 #10.GEt x264 from here  http://www.videolan.org/developers/x264.html
 
 
-passthru('wget ftp://ftp.videolan.org/pub/videolan/x264/snapshots/x264-snapshot-20080625-2245.tar.bz2');
-passthru('tar -jxvf x264-snapshot-20080625-2245.tar.bz2');
-passthru('cd x264-snapshot-20080625-2245');
-passthru('./configure --prefix=/usr --disable-asm --enable-pic ;make ;make install');
+passthru ('wget ftp://ftp.videolan.org/pub/videolan/x264/snapshots/x264-snapshot-20080625-2245.tar.bz2');
+passthru ('tar -jxvf x264-snapshot-20080625-2245.tar.bz2');
+passthru ('cd x264-snapshot-20080625-2245');
+passthru ('./configure --prefix=/usr --disable-asm --enable-pic ;make ;make install');
 chdir (BUILDDIR);
 
 
