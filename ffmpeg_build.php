@@ -3,7 +3,7 @@
 
 $OperatingSystem="Ubuntu";
 $Version="8.04";
-$BuildDir="/opt/build";
+$BuildDir='/opt/build';
 
 function Configure()
 {
