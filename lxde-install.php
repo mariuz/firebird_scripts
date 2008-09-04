@@ -48,7 +48,7 @@ fclose($fp);
 
 passthru ('sudo apt-get -y update');
 passthru ('sudo apt-get -y install xorg');
-passthru ('sudo apt-get -y install lxde gdm');
+passthru ('sudo apt-get -y --force-yes install lxde gdm');
 passthru ('sudo /etc/init.d/gdm start');
 
 }
