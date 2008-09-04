@@ -40,7 +40,7 @@ if (($OperatingSystem == "Ubuntu") && ($Version =="8.04"))
 
 {
 
-passthru ('sudo apt-get -y install flamerobin ibwebadmin firebird2.1-examples');
+passthru ('sudo apt-get -y --force-yes install flamerobin ibwebadmin firebird2.1-examples');
 
 }
 
