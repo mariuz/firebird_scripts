@@ -52,7 +52,7 @@ passthru ('sudo apt-get -y --force-yes install lxde gdm ubuntu-gdm-themes');
 passthru ('sudo /etc/init.d/gdm start');
 // install other mini windowmanagers - they are small anyway fluxbox blackbox jwm 
 #install xfce 
-passthru ('sudo apt-get -y install  xfce4');
+passthru ('sudo apt-get -y install  xfce4 xfce4-terminal midori');
 
 
 }
