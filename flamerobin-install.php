@@ -42,6 +42,15 @@ if (($OperatingSystem == "Ubuntu") && ($Version =="8.04"))
 
 passthru ('sudo apt-get -y --force-yes install flamerobin ibwebadmin firebird2.1-examples');
 
+#enable php firebird extension
+$fp = fopen('/etc/php5/apache2/conf.d/firebird.ini','w');
+fwrite($fp,"extension = interbase.so\n");
+fclose($fp);
+
+
+passthru ('sudo /etc/init.d/apache2 restart');
+
+
 }
 
 
