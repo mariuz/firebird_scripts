@@ -50,8 +50,9 @@ passthru ('sudo apt-get -y update');
 passthru ('sudo apt-get -y install xorg');
 passthru ('sudo apt-get -y --force-yes install lxde gdm ubuntu-gdm-themes');
 passthru ('sudo /etc/init.d/gdm start');
-// install other mini windowmanagers - they are small anyway  
-passthru ('sudo apt-get -y install fluxbox blackbox jwm openbox xfce4');
+// install other mini windowmanagers - they are small anyway fluxbox blackbox jwm 
+#install xfce 
+passthru ('sudo apt-get -y install  xfce4');
 
 
 }
