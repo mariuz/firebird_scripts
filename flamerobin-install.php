@@ -54,8 +54,8 @@ passthru ('sudo mv employee.fdb /var/lib/firebird/2.1/data/');
 
 #Add yourself to the firebird and www-data group
 
-passthru ('sudo adduser `id -un` firebird');
-passthru ('sudo adduser `id -un` www-data');
+passthru ('sudo adduser \`id -un\` firebird');
+passthru ('sudo adduser \`id -un\` www-data');
 
 
 passthru ('sudo /etc/init.d/apache2 restart');
