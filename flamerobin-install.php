@@ -47,6 +47,16 @@ $fp = fopen('/etc/php5/apache2/conf.d/firebird.ini','w');
 fwrite($fp,"extension = interbase.so\n");
 fclose($fp);
 
+chdir("/usr/share/doc/firebird2.1-examples/examples/empbuild/");
+passthru ('sudo gunzip employee.fdb.gz');
+passthru ('sudo chown firebird.firebird employee.fdb employee.fdb');
+passthru ('sudo mv employee.fdb /var/lib/firebird/2.1/data/');
+
+#Add yourself to the firebird and www-data group
+
+passthru ('sudo adduser `id -un` firebird');
+passthru ('sudo adduser `id -un` www-data');
+
 
 passthru ('sudo /etc/init.d/apache2 restart');
 
