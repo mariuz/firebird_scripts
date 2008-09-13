@@ -32,7 +32,7 @@ passthru("make");
 passthru("sudo make install");
 
 chdir("/opt/build/");
-passthru("wget --continue  wget http://www.lighttpd.net/download/lighttpd-1.4.19.tar.gz");
+passthru("wget --continue http://www.lighttpd.net/download/lighttpd-1.4.19.tar.gz");
 passthru("tar -zxvf lighttpd-1.4.19.tar.gz");
 chdir("lighttpd-1.4.19");
 passthru("./configure --without-bzip2");
