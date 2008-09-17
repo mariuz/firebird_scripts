@@ -18,7 +18,7 @@ passthru("update-rc.d nginx defaults");
 
 
 
-passthru("apt-get install -y php5-cli php5-cgi build-essential libpcre3 libpcre3-dev libpcrecpp0 libssl-dev zlib1g-dev"); 
+passthru("apt-get install -y php5-cli php5-cgi build-essential libpcre3 libpcre3-dev libpcrecpp0 libssl-dev zlib1g-dev wget"); 
 passthru("mkdir -p /opt/build/nginx");
 chdir("/opt/build/nginx");
 passthru("wget --continue  http://sysoev.ru/nginx/nginx-0.6.32.tar.gz");
