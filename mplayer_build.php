@@ -41,7 +41,7 @@ chdir (BUILDDIR);
 #passthru ('sudo wget --continue http://www2.mplayerhq.hu/MPlayer/releases/MPlayer-1.0rc2.tar.bz2');
 passthru ('svn checkout svn://svn.mplayerhq.hu/mplayer/trunk mplayer');
 
-passthru ('sudo wget --continue http://www2.mplayerhq.hu/MPlayer/releases/codecs/essential-20061022.tar.bz2');
+passthru ('wget --continue http://www2.mplayerhq.hu/MPlayer/releases/codecs/essential-20061022.tar.bz2');
 
 passthru ('tar -jxf essential-20061022.tar.bz2');
 #passthru ('tar -jxf MPlayer-1.0rc2.tar.bz2');
