@@ -38,18 +38,14 @@ passthru ('apt-get -y build-dep ffmpeg');
 passthru ('apt-get -y install libfaad-dev libfaac-dev libxvidcore4-dev liba52-0.7.4-dev libdts-dev checkinstall liba52-dev libdts-dev libgsm1-dev libvorbis-dev libdc1394-dev libfaad-dev libtheora-dev libsdl1.2-dev ');
 passthru ('apt-get -y remove libx264-dev libx264');
 
-if ( $UbuntuRelease =="8.04")
+if ( $UbuntuRelease =="hardy")
 	{
-
 	passthru ('apt-get -y install liblame-dev');
-
 	}
 
-if ( $UbuntuRelease  =="8.10")
+if ( $UbuntuRelease  =="intrepid")
 	{
-	#on intrepid 
 	passthru ('apt-get -y install libmp3lame-dev');
-
 	}
 }
 
