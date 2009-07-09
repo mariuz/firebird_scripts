@@ -1,6 +1,8 @@
 #!/usr/bin/php
 <?
 DEFINE(NGINX_VERSION,'nginx-0.7.61');
+DEFINE(SPAWN_FCGI_VERSION,'spawn-fcgi-1.6.2');
+
 $fp = fopen('/usr/bin/php-fastcgi','w');
 fwrite($fp,"#!/bin/sh\n");
 fwrite($fp,"/usr/bin/spawn-fcgi -a 127.0.0.1 -p 9000 -u www-data -f /usr/bin/php5-cgi\n");
@@ -29,10 +31,11 @@ passthru("make");
 passthru("make install");
 
 chdir("/opt/build/");
-passthru("wget --continue http://www.lighttpd.net/download/lighttpd-1.4.19.tar.gz");
-passthru("tar -zxf lighttpd-1.4.19.tar.gz");
-chdir("lighttpd-1.4.19");
-passthru("./configure --without-bzip2");
+passthru("wget --continue http://www.lighttpd.net/download/".SPAWN_FCGI_VERSION.".tar.gz");
+passthru("tar -zxf ".SPAWN_FCGI_VERSION.".tar.gz");
+chdir(SPAWN_FCGI_VERSION);
+
+passthru("./configure");
 passthru("make");
 passthru("cp src/spawn-fcgi /usr/bin/spawn-fcgi");
 passthru("/etc/init.d/init-fastcgi start");
