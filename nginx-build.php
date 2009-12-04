@@ -5,7 +5,7 @@ DEFINE(SPAWN_FCGI_VERSION,'spawn-fcgi-1.6.2');
 
 $fp = fopen('/usr/bin/php-fastcgi','w');
 fwrite($fp,"#!/bin/sh\n");
-fwrite($fp,"/usr/bin/spawn-fcgi -a 127.0.0.1 -p 9000 -u www-data -f /usr/bin/php5-cgi\n");
+fwrite($fp,"/usr/bin/spawn-fcgi -C 10 -F 10 -a 127.0.0.1 -p 9000 -u www-data -f /usr/bin/php5-cgi\n");
 fclose($fp);
 
 passthru("chmod +x /usr/bin/php-fastcgi");
