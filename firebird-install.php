@@ -11,9 +11,9 @@ fwrite($fp,"deb-src http://ppa.launchpad.net/mapopa/ubuntu $UbuntuRelease main\n
 fclose($fp);
 
 passthru("sudo apt-get update"); 
-passthru("sudo apt-get -y --force-yes install firebird2.1-super");
+passthru("sudo apt-get -y --force-yes install firebird2.5-super");
 
-passthru("sudo sudo dpkg-reconfigure firebird2.1-super");
+passthru("sudo sudo dpkg-reconfigure firebird2.5-super");
 
 passthru("sudo apt-get -y --force-yes install php5-interbase");
 
