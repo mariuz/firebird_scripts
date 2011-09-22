@@ -28,7 +28,7 @@ chdir("/opt/build/nginx");
 passthru("wget --continue  http://nginx.org/download/".NGINX_VERSION.".tar.gz");
 passthru("tar -zxf ".NGINX_VERSION.".tar.gz");
 chdir(NGINX_VERSION);
-passthru("./configure --prefix=/opt/nginx --with-http_flv_module");
+passthru("./configure --prefix=/opt/nginx");
 passthru("make");
 passthru("make install");
 
