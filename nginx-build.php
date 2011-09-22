@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?
-DEFINE(NGINX_VERSION,'nginx-0.7.61');
-DEFINE(SPAWN_FCGI_VERSION,'spawn-fcgi-1.6.2');
+DEFINE(NGINX_VERSION,'nginx-1.0.6');
+DEFINE(SPAWN_FCGI_VERSION,'spawn-fcgi-1.6.3');
 
 $fp = fopen('/usr/bin/php-fastcgi','w');
 fwrite($fp,"#!/bin/sh\n");
